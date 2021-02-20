@@ -15,6 +15,15 @@ const showQuote = (data) =>{
     document.getElementById('quote-area').classList.remove("d-none")
     document.getElementById('speech').innerText = data.content;
     document.getElementById('author').innerText = data.author;
+
+   let tagsInnerHtml = "";
+    data.tags.forEach (()=>
+    {
+      tagsInnerHtml = `<p class="text-center tag">#${data.tags} </p>`
+      document.getElementById('tag-list').innerHTML = tagsInnerHtml;
+
+    })
+
     toggleSpinner(false);
 }
 
